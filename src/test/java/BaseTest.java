@@ -43,11 +43,11 @@ public class BaseTest {
 
 
     }
-    public void LongPress(WebElement elementToPress){
+    public void longPress(WebElement elementToPress){
         ((JavascriptExecutor) driver).executeScript("mobile: longClickGesture", ImmutableMap.of(
                 "elementId", ((RemoteWebElement) elementToPress).getId(),"duration",2000));
     }
-
+    //Scroll until you find
     public void scrollWithUiAutomator(String element){
         driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+element+"\"));"));
 
@@ -69,6 +69,16 @@ public class BaseTest {
         ));
     }
 
+    public void drag(WebElement element, int xCoordinate, int yCoordinate){
+
+        ((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of(
+                "elementId", ((RemoteWebElement) element).getId(),
+                "endX", xCoordinate,
+                "endY", yCoordinate
+        ));
+
+    }
+
     @AfterClass
     public void tearDown(){
         driver.quit();
@@ -76,3 +86,6 @@ public class BaseTest {
 
     }
 }
+
+
+
