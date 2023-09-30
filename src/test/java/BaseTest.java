@@ -18,7 +18,7 @@ public class BaseTest {
 
     public AndroidDriver driver;
     public AppiumDriverLocalService service;
-
+    protected BasePage basePage;
     public BaseTest()  {
     }
 
@@ -34,12 +34,12 @@ public class BaseTest {
 
         UiAutomator2Options options=new UiAutomator2Options();
         options.setDeviceName("S23 Ultra");
-        options.setApp("E:\\AppiumDemo\\src\\main\\resources\\ApiDemos-debug.apk");
+        options.setApp("E:\\AppiumDemo\\src\\main\\resources\\General-Store.apk");
 
 
             driver=new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
 
-
+        basePage=new BasePage(driver);
 
 
     }
