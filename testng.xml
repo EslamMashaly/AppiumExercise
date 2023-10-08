@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+    <listeners>
+        <listener class-name="utils.listeners.Listeners"/>
+    </listeners>>
+
+    <test verbose="2" preserve-order="true" name="E:/AppiumDemo">
+        <classes>
+            <class name="NativeTests.test">
+                <methods>
+                    <include name="successfulLogIn"/>
+<!--                    <include name="testToastMessage"/>-->
+                </methods>
+            </class>
+<!--            <class name="WebTests.MobileBrowserTest">-->
+<!--                <methods>-->
+<!--                    <include name="alreadyRegistesredEmail"/>-->
+<!--                    <include name="alreadyRegisteredEmail"/>-->
+<!--                    <include name="enterShortPassword"/>-->
+<!--                    <include name="enterDataWithoutPolicyAgreement"/>-->
+<!--                    <include name="testValidRegistration"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+        </classes>
+    </test>
+</suite>
