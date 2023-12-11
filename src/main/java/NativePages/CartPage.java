@@ -21,6 +21,7 @@ public class CartPage extends BasePage{
     }
 
     public WebPage goToWebsite(){
+        elementVisibilityExplicitWait(visitWebsiteButton,5);
         driver.findElement(visitWebsiteButton).click();
         return new WebPage(driver);
     }

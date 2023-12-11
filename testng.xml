@@ -6,23 +6,15 @@
         <listener class-name="utils.listeners.Listeners"/>
     </listeners>>
 
-    <test verbose="2" preserve-order="true" name="E:/AppiumDemo">
+    <test verbose="2" preserve-order="true" name="D:/Repos/AppiumExercise">
         <classes>
             <class name="NativeTests.test">
                 <methods>
-                    <include name="successfulLogIn"/>
-<!--                    <include name="testToastMessage"/>-->
+                    <include name="successfulTest"/>
+                    <include name="failedTest"/>
                 </methods>
             </class>
-<!--            <class name="WebTests.MobileBrowserTest">-->
-<!--                <methods>-->
-<!--                    <include name="alreadyRegistesredEmail"/>-->
-<!--                    <include name="alreadyRegisteredEmail"/>-->
-<!--                    <include name="enterShortPassword"/>-->
-<!--                    <include name="enterDataWithoutPolicyAgreement"/>-->
-<!--                    <include name="testValidRegistration"/>-->
-<!--                </methods>-->
-<!--            </class>-->
+
         </classes>
     </test>
 </suite>

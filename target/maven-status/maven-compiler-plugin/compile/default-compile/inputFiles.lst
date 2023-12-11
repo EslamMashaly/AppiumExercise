@@ -1,1 +1,5 @@
-D:\Repos\AppiumExercise\src\main\java\org\Vodafone\Main.java
+D:\Repos\AppiumExercise\src\main\java\NativePages\WebPage.java
+D:\Repos\AppiumExercise\src\main\java\NativePages\FormPage.java
+D:\Repos\AppiumExercise\src\main\java\NativePages\ProductsPage.java
+D:\Repos\AppiumExercise\src\main\java\NativePages\CartPage.java
+D:\Repos\AppiumExercise\src\main\java\NativePages\BasePage.java

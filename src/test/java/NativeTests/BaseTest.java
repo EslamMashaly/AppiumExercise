@@ -2,12 +2,14 @@ package NativeTests;
 
 import NativePages.BasePage;
 import NativePages.FormPage;
+import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import utils.dataReaders.PropertiesReader;
 import utils.screenshot.TakeScreenShot;
 
 import java.io.File;
@@ -22,23 +24,26 @@ public class BaseTest {
     protected BasePage basePage;
     protected FormPage formPage;
     protected TakeScreenShot takeScreenShot;
+
     public BaseTest()  {
     }
 
     @BeforeClass
     public void setServer() throws MalformedURLException {
 
+
         service=new AppiumServiceBuilder()
-                .withAppiumJS(new File("C://Users//TECHNICAL//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
                 .withIPAddress("127.0.0.1")
                 .usingPort(4723)
                 .build();
         service.start();
 
+        String deviceName = PropertiesReader.pathsData.getProperty("DeviceName");
+        String appPath = PropertiesReader.pathsData.getProperty("AppPath");
         UiAutomator2Options options=new UiAutomator2Options();
-        options.setDeviceName("S23 Ultra");
-        options.setApp("E:\\AppiumDemo\\src\\main\\resources\\General-Store.apk");
-        options.setChromedriverExecutable("E:\\AppiumDemo\\src\\main\\resources\\chromedriver.exe");
+        options.setDeviceName(deviceName);
+        options.setApp(appPath);
+        options.setChromedriverExecutable("D:\\Repos\\AppiumExercise\\src\\main\\resources\\chromedriver.exe");
 
             driver=new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
 
